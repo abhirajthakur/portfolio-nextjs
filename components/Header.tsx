@@ -30,11 +30,13 @@ const Header = (props: Props) => {
           url="https://twitter.com/AbhirajThakur21"
           fgColor="grey"
           bgColor="transparent"
+          target="_blank"
         />
         <SocialIcon
           url="https://www.linkedin.com/in/abhiraj-thakur-1a53b9218/"
           fgColor="grey"
           bgColor="transparent"
+          target="_blank"
         />
       </motion.div>
 
