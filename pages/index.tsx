@@ -3,6 +3,7 @@ import Head from "next/head";
 import About from "../components/About";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Skills from "../components/Skills";
 
 const Home: NextPage = () => {
   return (
@@ -18,15 +19,23 @@ const Home: NextPage = () => {
 
       {/* Hero */}
       <section id="hero" className="snap-start">
-        <Hero image="/profileImage.jpeg" />
+        <Hero image="/profile-pic (6).png" />
       </section>
 
       {/* About */}
       <section id="about" className="snap-center">
-        <About image="/profileImage.jpeg" />
+        <About image="/profile-pic (2).png" />
       </section>
 
       {/* Experiences */}
+      {/* <section id="experience" className="snap-center">
+        <WorkExperience image="/solidity-logo.png"/>
+      </section> */}
+
+      {/* Skills */}
+      <section id="skills" className="snap-start">
+        <Skills />
+      </section>
 
       {/* Projects */}
 

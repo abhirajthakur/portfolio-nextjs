@@ -6,8 +6,8 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <header
-      className="sticky top-0 p-5 flex items-start justify-between max-w-7xl z-50 
-    xl:items-center"
+      className="sticky top-0 p-5 flex items-start justify-between max-w-full z-50 
+      xl:items-center"
     >
       {/* Social Icons */}
       <motion.div
@@ -33,7 +33,7 @@ const Header = (props: Props) => {
           target="_blank"
         />
         <SocialIcon
-          url="https://www.linkedin.com/in/abhiraj-thakur-1a53b9218/"
+          url="https://www.linkedin.com/in/abhirajthakur21/"
           fgColor="grey"
           bgColor="transparent"
           target="_blank"

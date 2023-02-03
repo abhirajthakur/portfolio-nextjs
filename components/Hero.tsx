@@ -8,13 +8,13 @@ type Props = { image: string };
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, The name's ABHIRAJ THAKUR",
-      "Currently a Student",
-      "Want to become a Blockchain/Web3 <Developer />",
+      "Hi, My name is ABHIRAJ THAKUR",
+      "I want to become a Blockchain/Web3 <Developer />",
     ],
     loop: true,
     delaySpeed: 1500,
   });
+
   return (
     <div
       className="h-screen flex flex-col space-y-8 items-center justify-center 
@@ -29,7 +29,9 @@ const Hero = (props: Props) => {
         width={180}
       />
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Student</h2>
+        {/* <h2 className="text-md uppercase text-gray-500 ml-5 pb-5 tracking-[14px]">
+          Student
+        </h2> */}
         <h1 className="text-4xl lg:text-5xl font-semibold px-10">
           <span className="mr-[-5px]">{text}</span>
           <Cursor cursorColor="#00FFFF" />
@@ -39,7 +41,7 @@ const Hero = (props: Props) => {
             <button className="heroButton">About</button>
           </Link>
           {/* <Link href="#experience">
-            <button className="heroButton">Experince</button>
+            <button className="heroButton">Experience</button>
           </Link> */}
           <Link href="#skills">
             <button className="heroButton">Skills</button>
