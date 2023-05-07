@@ -1,5 +1,6 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
@@ -27,6 +28,12 @@ const Header = (props: Props) => {
         className="flex flex-row items-center"
       >
         <SocialIcon
+          url="https://github.com/abhirajthakur/"
+          fgColor="grey"
+          bgColor="transparent"
+          target="_blank"
+        />
+        <SocialIcon
           url="https://twitter.com/AbhirajThakur21"
           fgColor="grey"
           bgColor="transparent"
@@ -41,32 +48,34 @@ const Header = (props: Props) => {
       </motion.div>
 
       {/* Contact Me */}
-      <motion.div
-        initial={{
-          x: 500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1.3,
-        }}
-        className="flex flex-row items-center text-gray-300 cursor"
-      >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="grey"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get in Touch
-        </p>
-      </motion.div>
+      <Link href="#contact">
+        <motion.div
+          initial={{
+            x: 500,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.3,
+          }}
+          className="flex flex-row items-center text-gray-300 cursor"
+        >
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="grey"
+            bgColor="transparent"
+          />
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Get in Touch
+          </p>
+        </motion.div>
+      </Link>
     </header>
   );
 };

@@ -8,11 +8,11 @@ type Props = { image: string };
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, My name is ABHIRAJ THAKUR",
+      "Hi, My name is Abhiraj Thakur",
       "I want to become a Blockchain/Web3 <Developer />",
     ],
     loop: true,
-    delaySpeed: 1500,
+    delaySpeed: 1400,
   });
 
   return (
@@ -22,11 +22,11 @@ const Hero = (props: Props) => {
     >
       <BackgroundCircles />
       <Image
-        className="relative h-32 w-32 mx-auto rounded-full object-cover"
+        className="relative h-20 w-20 mx-auto rounded-full object-cover"
         src={props.image}
         alt="Profile Image"
-        height={180}
-        width={180}
+        height={160}
+        width={160}
       />
       <div className="z-20">
         {/* <h2 className="text-md uppercase text-gray-500 ml-5 pb-5 tracking-[14px]">
