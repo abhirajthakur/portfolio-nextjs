@@ -31,13 +31,13 @@ const ContactMe = (props: Props) => {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-4 mt-[7.5rem]">
+      <div className="flex flex-col space-y-4 mt-[7rem]">
         <h4 className="text-2xl font-semibold text-center">
           I have got just what you need.{" "}
           <span className="underline decoration-[#00FFFF]/40">Lets talk.</span>
         </h4>
 
-        <div className="space-y-5">
+        <div className="space-y-2">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#00FFFF] h-5 w-6 animate-pulse" />
             <p className="text-lg">+91 1234567890</p>
@@ -56,9 +56,9 @@ const ContactMe = (props: Props) => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-1.5 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-1.5">
             <input
               {...register("name")}
               placeholder="Name"

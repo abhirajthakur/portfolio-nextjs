@@ -53,7 +53,7 @@ const Home: NextPage = () => {
 
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-end items-center pr-5">
             <img
               className="h-10 w-10 rounded-full filter contrast-50 hover:invert cursor-pointer"
               src="/up-arrow.jpg"
