@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlForImage } from "../sanity";
 
-type Props = { image: string };
+type Props = { pageInfo: PageInfo };
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{
@@ -17,7 +19,7 @@ const About = (props: Props) => {
       className="flex flex-col relative h-screen text-center md:text-left md:flex-row 
             max-w-full px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-16 uppercase tracking-[16px] text-gray-500 text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[16px] text-gray-500 text-2xl">
         About
       </h3>
 
@@ -34,25 +36,17 @@ const About = (props: Props) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        src={props.image}
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
-                md:rounded-full md:w-60 md:h-60"
+        src={urlForImage(pageInfo?.profilePicture).url()}
+        className="-mb-20 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover
+                md:rounded-full md:w-56 md:h-56"
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here's a{" "}
+          Here&apos;s a{" "}
           <span className="underline decoration-[#00FFFF]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          Hi 🙋️, I am Abhiraj Thakur and I am currently in the 6th semester of my B.Tech 
-          course. I am enthusiastic about web3 and blockchain. 
-          I have gained knowledge about blockchain and smart 
-          contracts and now I want that knowledge to be applied 
-          to real world. I eagerly want to get a job/internship 
-          in web3 domain as a web3/solidity/blockchain developer 
-          so that I can gain new skills and industry experience.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

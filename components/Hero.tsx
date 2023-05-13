@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import { PageInfo } from "../typings";
+import { urlForImage } from "../sanity";
 
-type Props = { image: string };
+type Props = { pageInfo: PageInfo };
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, My name is Abhiraj Thakur",
-      "I want to become a Blockchain/Web3 <Developer />",
+      `Hi, My name is ${pageInfo?.name}`,
+      "I want to become a Blockchain <Developer />",
     ],
     loop: true,
     delaySpeed: 1400,
@@ -22,11 +24,11 @@ const Hero = (props: Props) => {
     >
       <BackgroundCircles />
       <Image
-        className="relative h-20 w-20 mx-auto rounded-full object-cover"
-        src={props.image}
+        className="relative h-32 w-32 mx-auto rounded-full object-cover"
+        src={urlForImage(pageInfo?.heroImage).url()}
         alt="Profile Image"
-        height={160}
-        width={160}
+        height={170}
+        width={170}
       />
       <div className="z-20">
         {/* <h2 className="text-md uppercase text-gray-500 ml-5 pb-5 tracking-[14px]">
