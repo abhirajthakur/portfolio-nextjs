@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
 import { urlForImage } from "../sanity";
@@ -14,10 +15,10 @@ const About = ({ pageInfo }: Props) => {
         opacity: 1,
       }}
       transition={{
-        duration: 1.2,
+        duration: 1.5,
       }}
       className="flex flex-col relative h-screen text-center md:text-left md:flex-row 
-            max-w-full px-10 justify-evenly mx-auto items-center"
+            max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
       <h3 className="absolute top-24 uppercase tracking-[16px] text-gray-500 text-2xl">
         About
@@ -38,8 +39,9 @@ const About = ({ pageInfo }: Props) => {
         viewport={{ once: true }}
         src={urlForImage(pageInfo?.profilePicture).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover
-                md:rounded-full md:w-56 md:h-56"
+                md:rounded-lg md:w-64 md:h-95"
       />
+
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Here&apos;s a{" "}

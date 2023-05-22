@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
@@ -13,7 +14,8 @@ const Skills = ({ skills }: Props) => {
       <h3 className="absolute top-24 uppercase tracking-[16px] text-gray-500 text-2xl">
         Skills
       </h3>
-      <h3 className="absolute top-36 uppercase tracking-[2px] text-gray-500 text-sm">
+
+      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
         Hover over a skill for current proficiency
       </h3>
 

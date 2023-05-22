@@ -13,7 +13,6 @@ import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
-import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -38,11 +37,16 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       experiences,
     },
-    revalidate: 10,
+    // revalidate: 30,
   };
 };
 
-const Home = ({ pageInfo, socials, skills, projects, experiences }: Props) => {
+const Home = ({
+  pageInfo,
+  socials,
+  skills,
+  projects /* experiences */,
+}: Props) => {
   return (
     <div
       className="bg-[rgb(34,35,36)] text-white h-screen snap-y snap-mandatory 
@@ -69,8 +73,8 @@ const Home = ({ pageInfo, socials, skills, projects, experiences }: Props) => {
 
         {/* Experiences */}
         {/* <section id="experience" className="snap-center">
-        <WorkExperience image="/solidity-logo.png"/>
-      </section> */}
+          <WorkExperience image="/solidity-logo.png" />
+        </section> */}
 
         {/* Skills */}
         <section id="skills" className="snap-start">
@@ -90,12 +94,10 @@ const Home = ({ pageInfo, socials, skills, projects, experiences }: Props) => {
         <Link href="#hero">
           <footer className="sticky bottom-5 w-full cursor-pointer">
             <div className="flex justify-end items-center pr-5">
-              <Image
+              <img
                 className="h-10 w-10 rounded-full filter contrast-50 hover:invert cursor-pointer"
                 src="/up-arrow.jpg"
-                alt=""
-                width={50}
-                height={50}
+                alt="GO BACK"
               />
             </div>
           </footer>

@@ -1,0 +1,6 @@
+{
+  "id": "clhmj18xx0000jr08iygerfc7",
+  "name": "portfolio",
+  "distDir": "build",
+  "buildCommand": "yarn run build"
+}

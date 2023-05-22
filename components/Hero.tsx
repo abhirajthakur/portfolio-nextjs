@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -14,7 +15,7 @@ const Hero = ({ pageInfo }: Props) => {
       "I want to become a Blockchain <Developer />",
     ],
     loop: true,
-    delaySpeed: 1400,
+    delaySpeed: 2000,
   });
 
   return (
@@ -24,27 +25,25 @@ const Hero = ({ pageInfo }: Props) => {
     >
       <BackgroundCircles />
       <Image
-        className="relative h-32 w-32 mx-auto rounded-full object-cover"
+        className="relative rounded-full h-35 w-35 mx-auto object-cover"
         src={urlForImage(pageInfo?.heroImage).url()}
         alt="Profile Image"
-        height={170}
-        width={170}
+        height={175}
+        width={175}
       />
+
       <div className="z-20">
-        {/* <h2 className="text-md uppercase text-gray-500 ml-5 pb-5 tracking-[14px]">
-          Student
-        </h2> */}
-        <h1 className="text-4xl lg:text-5xl font-semibold px-10">
-          <span className="mr-[-5px]">{text}</span>
+        {/* <h2 className="text-sm uppercase text-gray-500 pb-5 tracking-[14px]">Student</h2> */}
+        <h1 className="text-5xl lg:text-5xl font-semibold px-10">
+          <span className="-mr-1">{text}</span>
           <Cursor cursorColor="#00FFFF" />
         </h1>
+
         <div className="pt-5">
+          {/* <Link href="#experience"><button className="heroButton">Experience</button></Link> */}
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
-          {/* <Link href="#experience">
-            <button className="heroButton">Experience</button>
-          </Link> */}
           <Link href="#skills">
             <button className="heroButton">Skills</button>
           </Link>

@@ -1,7 +1,9 @@
+import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../typings";
+import Image from "next/image";
 
 type Props = {
   socials: Social[];
@@ -9,10 +11,7 @@ type Props = {
 
 const Header = ({ socials }: Props) => {
   return (
-    <header
-      className="sticky top-0 p-5 flex items-start justify-between max-w-full z-50 
-      xl:items-center"
-    >
+    <header className="sticky top-0 p-5 flex items-center justify-between max-w-7xl mx-auto z-50">
       {/* Social Icons */}
       <motion.div
         initial={{
@@ -26,7 +25,7 @@ const Header = ({ socials }: Props) => {
           scale: 1,
         }}
         transition={{
-          duration: 1.3,
+          duration: 1.5,
         }}
         className="flex flex-row items-center"
       >
@@ -42,7 +41,7 @@ const Header = ({ socials }: Props) => {
       </motion.div>
 
       {/* Contact Me */}
-      <Link href="#contact">
+      <Link href="#contact" className="flex items-center">
         <motion.div
           initial={{
             x: 500,
@@ -55,15 +54,24 @@ const Header = ({ socials }: Props) => {
             scale: 1,
           }}
           transition={{
-            duration: 1.3,
+            duration: 1.5,
           }}
-          className="flex flex-row items-center text-gray-300 cursor"
+          className="flex flex-row items-center justify-center text-gray-300 cursor-pointer"
         >
-          <SocialIcon
-            className="cursor-pointer"
+          {/* <SocialIcon
             network="email"
-            fgColor="grey"
+            className="cursor-pointer bg-none"
+            fgColor="gray"
             bgColor="transparent"
+            target="_blank"
+          /> */}
+
+          <Image
+            src={"/mail-removebg.png"}
+            alt="mail"
+            width={40}
+            height={40}
+            className="cursor-pointer"
           />
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
             Get in Touch

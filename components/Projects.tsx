@@ -1,7 +1,7 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlForImage } from "../sanity";
-import Link from "next/link";
 
 type Props = { projects: Project[] };
 
@@ -20,13 +20,14 @@ const Projects = ({ projects }: Props) => {
 
       <div
         className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x 
-      snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#00FFFF]/75"
+      snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 
+      scrollbar-thumb-[#00FFFF]/75"
       >
         {projects.map((project, index) => (
           <div
             key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 
-                    items-center justify-center p-20 md:p-44 h-screen"
+            items-center justify-center p-20 md:p-44 h-screen"
           >
             <motion.img
               initial={{
@@ -43,16 +44,14 @@ const Projects = ({ projects }: Props) => {
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-2xl font-semibold text-center">
+              <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#00FFFF]/40">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
-                <Link href={project?.linkToSourceCode} target="_blank">
-                  {project?.title}
-                </Link>
+                {project?.title}
               </h4>
 
-              <div className="flex justify-center space-x-2">
+              {/* <div className="flex justify-center space-x-2">
                 {project?.technologies.map((technology) => (
                   <img
                     className="h-7 w-7"
@@ -61,7 +60,7 @@ const Projects = ({ projects }: Props) => {
                     alt={technology?.name}
                   />
                 ))}
-              </div>
+              </div> */}
 
               <p className="text-lg text-center md:text-left">
                 {project?.summary}
@@ -71,7 +70,7 @@ const Projects = ({ projects }: Props) => {
         ))}
       </div>
 
-      <div className="w-full absolute top-[23%] bg-[#00FFFF]/10 left-0 h-[400px] -skew-y-12"></div>
+      <div className="w-full absolute top-[30%] bg-[#00FFFF]/10 left-0 h-[500px] -skew-y-12"></div>
     </motion.div>
   );
 };
