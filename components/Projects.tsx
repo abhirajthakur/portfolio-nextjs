@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlForImage } from "../sanity";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = { projects: Project[] };
 
@@ -14,7 +16,7 @@ const Projects = ({ projects }: Props) => {
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row 
         max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute top-24 uppercase tracking-[16px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[16px] text-gray-500 text-2xl">
         Projects
       </h3>
 
@@ -27,7 +29,7 @@ const Projects = ({ projects }: Props) => {
           <div
             key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 
-            items-center justify-center p-20 md:p-44 h-screen"
+            items-center justify-center p-[4.5rem] xl:p-20 h-screen"
           >
             <motion.img
               initial={{
@@ -40,29 +42,39 @@ const Projects = ({ projects }: Props) => {
               src={urlForImage(project?.image).url()}
               alt={project?.title}
               onClick={() => window.open(project?.linkToBuild, "_blank")}
-              width={500}
+              width={650}
+              className="lg:p-28 lg:pb-0 cursor-pointer"
             />
 
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+            <div className="space-y-3">
+              <h4 className="text-2xl font-bold text-center">
                 <span className="underline decoration-[#00FFFF]/40">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
-                {project?.title}
+                <Link href={project?.linkToSourceCode} target="_blank">
+                  {project?.title}
+                </Link>
               </h4>
 
-              {/* <div className="flex justify-center space-x-2">
+              <div className="flex justify-center space-x-2">
                 {project?.technologies.map((technology) => (
-                  <img
-                    className="h-7 w-7"
-                    key={technology._id}
+                  // <img
+                  //   className="h-7 w-7"
+                  //   key={technology._id}
+                  //   src={urlForImage(technology?.image).url()}
+                  //   alt={technology?.name}
+                  // />
+                  <Image
                     src={urlForImage(technology?.image).url()}
+                    width={30}
+                    height={30}
+                    key={technology._id}
                     alt={technology?.name}
                   />
                 ))}
-              </div> */}
+              </div>
 
-              <p className="text-lg text-center md:text-left">
+              <p className="text-lg text-center md:text-justify">
                 {project?.summary}
               </p>
             </div>
@@ -70,7 +82,7 @@ const Projects = ({ projects }: Props) => {
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#00FFFF]/10 left-0 h-[500px] -skew-y-12"></div>
+      <div className="w-full absolute top-[30%] bg-[#00FFFF]/10 left-0 h-[500px] -skew-y-12 -z-30"></div>
     </motion.div>
   );
 };
