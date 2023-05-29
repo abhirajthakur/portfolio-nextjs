@@ -20,7 +20,7 @@ const ContactMe = (props: Props) => {
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     console.log(formData);
     window.location.href = `mailto:abhirajthakur124@gmail.com?subject=${formData.subject}
-    &body=${formData.message}\n\nName: ${formData.name}`;
+    &body=${formData.message}`;
   };
 
   return (

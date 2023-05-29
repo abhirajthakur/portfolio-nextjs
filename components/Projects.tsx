@@ -43,7 +43,7 @@ const Projects = ({ projects }: Props) => {
               alt={project?.title}
               onClick={() => window.open(project?.linkToBuild, "_blank")}
               width={650}
-              className="lg:p-28 lg:pb-0 cursor-pointer"
+              className="p-36 pb-0 lg:p-28 lg:pb-0 cursor-pointer"
             />
 
             <div className="space-y-3">
@@ -58,18 +58,12 @@ const Projects = ({ projects }: Props) => {
 
               <div className="flex justify-center space-x-2">
                 {project?.technologies.map((technology) => (
-                  // <img
-                  //   className="h-7 w-7"
-                  //   key={technology._id}
-                  //   src={urlForImage(technology?.image).url()}
-                  //   alt={technology?.name}
-                  // />
                   <Image
+                    key={technology._id}
                     src={urlForImage(technology?.image).url()}
+                    alt={technology?.name}
                     width={30}
                     height={30}
-                    key={technology._id}
-                    alt={technology?.name}
                   />
                 ))}
               </div>

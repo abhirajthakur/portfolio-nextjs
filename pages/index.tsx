@@ -13,6 +13,7 @@ import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -94,10 +95,12 @@ const Home = ({
         <Link href="#hero">
           <footer className="sticky bottom-5 w-full cursor-pointer">
             <div className="flex justify-end items-center pr-5">
-              <img
+              <Image
                 className="h-10 w-10 rounded-full filter contrast-50 hover:invert cursor-pointer"
                 src="/up-arrow.jpg"
                 alt="GO BACK"
+                width={50}
+                height={50}
               />
             </div>
           </footer>
