@@ -30,7 +30,7 @@ const About = ({ pageInfo }: Props) => {
           opacity: 0,
         }}
         transition={{
-          duration: 1.2,
+          duration: 1.4,
         }}
         whileInView={{
           x: 0,
@@ -38,8 +38,7 @@ const About = ({ pageInfo }: Props) => {
         }}
         viewport={{ once: true }}
         src={urlForImage(pageInfo?.profilePicture).url()}
-        className="-mb-20 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover
-                md:rounded-lg md:w-64 md:h-95"
+        className="-mb-20 md:mb-0 flex-shrink-0 w-40 h-40 rounded-full object-cover md:w-64 md:h-64"
       />
 
       <div className="space-y-10 px-0 md:px-10">
@@ -48,7 +47,9 @@ const About = ({ pageInfo }: Props) => {
           <span className="underline decoration-[#00FFFF]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-base text-justify">
+          {pageInfo?.backgroundInformation}
+        </p>
       </div>
     </motion.div>
   );

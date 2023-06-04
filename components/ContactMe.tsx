@@ -1,8 +1,6 @@
 import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-type Props = {};
 
 type Inputs = {
   name: string;
@@ -11,7 +9,7 @@ type Inputs = {
   message: string;
 };
 
-const ContactMe = (props: Props) => {
+const ContactMe = () => {
   const {
     register,
     handleSubmit,
@@ -32,19 +30,19 @@ const ContactMe = (props: Props) => {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-5 xl:-mb-16">
+      <div className="flex flex-col space-y-5 xl:-mb-20">
         <h4 className="text-xl md:text-3xl font-semibold text-center">
           I have got just what you need.{" "}
           <span className="underline decoration-[#00FFFF]/40">Lets talk.</span>
         </h4>
 
-        <div className="space-y-5">
-          <div className="flex items-center space-x-4 justify-center">
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3.5 justify-center">
             <EnvelopeIcon className="text-[#00FFFF] h-6 w-6 animate-pulse" />
             <p className="text-xl">abhirajthakur124@gmail.com</p>
           </div>
 
-          <div className="flex items-center space-x-4 justify-center">
+          <div className="flex items-center space-x-3.5 justify-center">
             <MapPinIcon className="text-[#00FFFF] h-6 w-6 animate-pulse" />
             <p className="text-xl">Pinjore, Haryana, India</p>
           </div>
@@ -52,9 +50,9 @@ const ContactMe = (props: Props) => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-1 w-fit mx-auto overflow-y-auto"
+          className="flex flex-col space-y-1.5 w-fit mx-auto overflow-y-auto"
         >
-          <div className="flex space-x-1">
+          <div className="flex space-x-1.5">
             <input
               {...register("name")}
               placeholder="Name"
@@ -87,7 +85,7 @@ const ContactMe = (props: Props) => {
           />
           <button
             type="submit"
-            className="bg-[#00FFFF] py-3 rounded-md text-black font-bold text-base 
+            className="bg-[#00FFFF] py-2.5 rounded-sm text-black font-bold text-base 
             hover:bg-[#00FFFF]/50 transition-all"
           >
             Submit

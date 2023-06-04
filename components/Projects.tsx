@@ -36,7 +36,7 @@ const Projects = ({ projects }: Props) => {
                 y: -300,
                 opacity: 0,
               }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1.3 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               src={urlForImage(project?.image).url()}
@@ -48,7 +48,7 @@ const Projects = ({ projects }: Props) => {
 
             <div className="space-y-3">
               <h4 className="text-2xl font-bold text-center">
-                <span className="underline decoration-[#00FFFF]/40">
+                <span className="underline decoration-[#00FFFF]/60">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
                 <Link href={project?.linkToSourceCode} target="_blank">
@@ -76,7 +76,7 @@ const Projects = ({ projects }: Props) => {
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#00FFFF]/10 left-0 h-[500px] -skew-y-12 -z-30"></div>
+      <div className="w-full absolute top-[25%] bg-[#00FFFF]/10 left-0 h-[350px] -skew-y-12 -z-30"></div>
     </motion.div>
   );
 };
