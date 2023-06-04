@@ -1,10 +1,16 @@
 import { Social } from "../typings";
 
+const query = `
+    *[_type == "social"]
+`;
+
 export const fetchSocials = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`);
+  const uri = `https://2lc8sy0g.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
+  const encoded = encodeURI(uri);
+  const res = await fetch(encoded);
 
   const data = await res.json();
-  const socials: Social[] = data.socials;
+  const socials: Social[] = data.result;
 
   // console.log("Socials: ", socials);
 

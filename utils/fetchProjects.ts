@@ -1,10 +1,19 @@
 import { Project } from "../typings";
 
+const query = `
+    *[_type == "project"] {
+      ...,
+      technologies[] ->
+    }
+`;
+
 export const fetchProjects = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`);
+  const uri = `https://2lc8sy0g.api.sanity.io/v2021-06-07/data/query/production?query=${query}`;
+  const encoded = encodeURI(uri);
+  const res = await fetch(encoded);
 
   const data = await res.json();
-  const projects: Project[] = data.projects;
+  const projects: Project[] = data.result;
 
   // console.log("Projects: ", projects);
 
