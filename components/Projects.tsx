@@ -42,7 +42,7 @@ const Projects = ({ projects }: Props) => {
               src={urlForImage(project?.image).url()}
               alt={project?.title}
               onClick={() => window.open(project?.linkToBuild, "_blank")}
-              width={650}
+              width={750}
               className="p-36 pb-0 lg:p-28 lg:pb-0 cursor-pointer"
             />
 

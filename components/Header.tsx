@@ -41,7 +41,7 @@ const Header = ({ socials }: Props) => {
       </motion.div>
 
       {/* Contact Me */}
-      <Link href="#contact" className="flex items-center">
+      <Link href="#contact" className="flex items-center justify">
         <motion.div
           initial={{
             x: 500,
@@ -67,10 +67,10 @@ const Header = ({ socials }: Props) => {
           /> */}
 
           <Image
-            src={"/mail-removebg.png"}
+            src="./mail-removebg.png"
             alt="mail"
-            width={40}
-            height={40}
+            width={45}
+            height={45}
             className="cursor-pointer"
           />
           <p className="uppercase hidden md:inline-flex text-sm text-gray-400">

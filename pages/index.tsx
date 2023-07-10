@@ -14,6 +14,7 @@ import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
 import Image from "next/image";
+import Script from "next/script";
 
 type Props = {
   pageInfo: PageInfo;
@@ -22,6 +23,17 @@ type Props = {
   projects: Project[];
   experiences: Experience[];
 };
+
+const scriptTxt = `
+(function () {
+  const { pathname } = window.location
+  const ipfsMatch = /.*\\/Qm\\w{44}\\//.exec(pathname)
+  const base = document.createElement('base')
+
+  base.href = ipfsMatch ? ipfsMatch[0] : '/'
+  document.head.append(base)
+})();
+`;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
@@ -37,7 +49,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       experiences,
-    }
+    },
   };
 };
 
@@ -53,6 +65,7 @@ const Home = ({
       overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20
       scrollbar-thumb-[#00FFFF]/80"
     >
+      <Script id="zero" dangerouslySetInnerHTML={{ __html: scriptTxt }} />
       <Head>
         <title>Abhiraj&apos;s Portfolio</title>
         <link rel="icon" href="/ReadyPlayerMe-Avatar.ico" />
@@ -96,7 +109,7 @@ const Home = ({
             <div className="flex justify-end items-center pr-5">
               <Image
                 className="h-10 w-10 rounded-full filter contrast-50 hover:invert cursor-pointer"
-                src="/up-arrow.jpg"
+                src="./up-arrow.jpg"
                 alt="GO BACK"
                 width={50}
                 height={50}
