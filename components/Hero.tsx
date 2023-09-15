@@ -12,8 +12,8 @@ const Hero = ({ pageInfo }: Props) => {
   const [text, /* count */] = useTypewriter({
     words: [
       `Hi, My name is ${pageInfo?.name}`,
-      "I'm a Blockchain and Web3 Enthusiast",
-      "I want to become a Blockchain <Developer />",
+      "I'm a Web3 Enthusiast",
+      "I aspire to become a Blockchain <Developer />",
     ],
     loop: true,
     delaySpeed: 2000,
